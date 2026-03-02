@@ -754,17 +754,17 @@
   <a href="#" onclick="showScreen('home')" id="nav-home" class="active">2. Home</a>
   <a href="#" onclick="showScreen('marketplace')" id="nav-marketplace">3. Marketplace</a>
   <a href="#" onclick="showScreen('template-detail')" id="nav-template-detail">4. Template</a>
-  <a href="#" onclick="showScreen('create-plan')" id="nav-create-plan">5. Create Plan</a>
-  <a href="#" onclick="showScreen('invite')" id="nav-invite">6. Invite</a>
-  <a href="#" onclick="showScreen('plan-overview')" id="nav-plan-overview">7. Plan Page</a>
-  <a href="#" onclick="showScreen('plan-forum')" id="nav-plan-forum">8. Forum</a>
-  <a href="#" onclick="showScreen('plan-album')" id="nav-plan-album">9. Album</a>
-  <a href="#" onclick="showScreen('book-venue')" id="nav-book-venue">10. Book Venue</a>
-  <a href="#" onclick="showScreen('book-movie')" id="nav-book-movie">11. Book Movie</a>
-  <a href="#" onclick="showScreen('order-food')" id="nav-order-food">12. Order Food</a>
-  <a href="#" onclick="showScreen('split-bill')" id="nav-split-bill">13. Split Bill</a>
-  <a href="#" onclick="showScreen('split-bill-custom')" id="nav-split-bill-custom">14. Custom Split</a>
-  <a href="#" onclick="showScreen('pay-share')" id="nav-pay-share">15. Pay (Attendee)</a>
+  <a href="#" onclick="showScreen('template-guided')" id="nav-template-guided">5. Guided View</a>
+  <a href="#" onclick="showScreen('create-plan')" id="nav-create-plan">6. Create Plan</a>
+  <a href="#" onclick="showScreen('task-detail')" id="nav-task-detail">7. Task Detail</a>
+  <a href="#" onclick="showScreen('invite')" id="nav-invite">8. Invite</a>
+  <a href="#" onclick="showScreen('plan-overview')" id="nav-plan-overview">9. Plan Page</a>
+  <a href="#" onclick="showScreen('publish-template')" id="nav-publish-template">10. Publish</a>
+  <a href="#" onclick="showScreen('plan-forum')" id="nav-plan-forum">11. Forum</a>
+  <a href="#" onclick="showScreen('book-venue')" id="nav-book-venue">12. Venue</a>
+  <a href="#" onclick="showScreen('order-food')" id="nav-order-food">13. Food</a>
+  <a href="#" onclick="showScreen('split-bill')" id="nav-split-bill">14. Split Bill</a>
+  <a href="#" onclick="showScreen('pay-share')" id="nav-pay-share">15. Pay</a>
 </nav>
 
 <div class="phone-frame">
@@ -946,97 +946,253 @@
     </div>
   </div>
 
-  <!-- Screen 4: Template Detail -->
+  <!-- Screen 4: Template Detail (Marketplace Landing) -->
   <div class="screen" id="template-detail">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
       <div class="back-btn clickable" onclick="showScreen('marketplace')">←</div>
-      <h1 style="font-size: 20px;">Treasure Hunt</h1>
+      <h1 style="font-size: 20px;">Template</h1>
     </div>
     <div class="content">
-      <div class="card-image" style="height: 180px; margin-bottom: 20px;">Treasure Hunt Cover</div>
+      <!-- Cover with Video indicator -->
+      <div class="card-image" style="height: 180px; margin-bottom: 16px; position: relative;">
+        Treasure Hunt Cover
+        <div style="position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.7); color: white; padding: 6px 10px; border-radius: 6px; font-size: 11px;">▶ 1:30 intro</div>
+      </div>
 
-      <p style="margin-bottom: 20px; line-height: 1.6;">Organize an exciting treasure hunt! This template includes clue planning, team formation, prize setup, and a complete event flow.</p>
+      <!-- Title & Rating -->
+      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+        <div>
+          <h2 style="font-size: 22px; margin-bottom: 4px;">Treasure Hunt</h2>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="color: #FFB800;">★★★★★</span>
+            <span style="font-size: 13px; color: #666;">4.8 (234 reviews)</span>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 20px; font-weight: 700; color: #007AFF;">₹99</div>
+          <div style="font-size: 11px; color: #666;">or Free with Pro</div>
+        </div>
+      </div>
 
+      <!-- Creator -->
+      <div class="card" style="padding: 12px; margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="avatar" style="background: #007AFF;">EP</div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">EventPro Studios</div>
+            <div style="font-size: 12px; color: #666;">Verified Creator • 12 templates</div>
+          </div>
+          <span style="background: #34C759; color: white; font-size: 10px; padding: 4px 8px; border-radius: 4px;">Verified</span>
+        </div>
+      </div>
+
+      <p style="margin-bottom: 16px; line-height: 1.6; font-size: 14px;">Organize an exciting treasure hunt! Complete guide with clue planning, team formation, prize setup, and step-by-step event flow.</p>
+
+      <!-- What You'll Get -->
+      <div class="card" style="background: #f0f7ff; border: 1px solid #007AFF; padding: 16px; margin-bottom: 20px;">
+        <h3 style="font-size: 14px; margin-bottom: 12px; color: #007AFF;">📦 WHAT YOU'LL GET</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 13px;">
+          <div>✓ 12 guided tasks</div>
+          <div>✓ 4-phase timeline</div>
+          <div>✓ Budget calculator</div>
+          <div>✓ 5 venue suggestions</div>
+          <div>✓ Printable checklist</div>
+          <div>✓ Pro tips included</div>
+        </div>
+      </div>
+
+      <!-- Preview Sections -->
       <div class="section-header">
-        <h2>Event Flow</h2>
+        <h2>Preview</h2>
+        <a href="#" onclick="showScreen('template-guided')">See full guide →</a>
       </div>
-      <div style="background: white; border-radius: 12px; padding: 16px; margin-bottom: 20px;">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="time">0:00</div>
-            <h4>Team Formation</h4>
-            <p>Divide into teams, assign team names</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="time">0:15</div>
-            <h4>Rules Briefing</h4>
-            <p>Explain rules, boundaries, and prizes</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="time">0:30</div>
-            <h4>Hunt Begins!</h4>
-            <p>Teams start finding clues</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="time">2:00</div>
-            <h4>Prize Ceremony</h4>
-            <p>Announce winners, distribute prizes</p>
-          </div>
+
+      <!-- Phases Preview -->
+      <div class="card" style="padding: 12px; margin-bottom: 12px;">
+        <div style="font-size: 12px; color: #007AFF; font-weight: 600; margin-bottom: 8px;">📋 PHASES</div>
+        <div style="display: flex; gap: 8px; overflow-x: auto;">
+          <span style="background: #e8f4ff; color: #007AFF; padding: 6px 12px; border-radius: 6px; font-size: 12px; white-space: nowrap;">1. Planning</span>
+          <span style="background: #eee; padding: 6px 12px; border-radius: 6px; font-size: 12px; white-space: nowrap;">2. Prep</span>
+          <span style="background: #eee; padding: 6px 12px; border-radius: 6px; font-size: 12px; white-space: nowrap;">3. Day-of</span>
+          <span style="background: #eee; padding: 6px 12px; border-radius: 6px; font-size: 12px; white-space: nowrap;">4. Wrap-up</span>
         </div>
       </div>
 
-      <div class="section-header">
-        <h2>Checklist Preview</h2>
-      </div>
-      <div style="background: white; border-radius: 12px; padding: 12px; margin-bottom: 20px;">
-        <div class="checklist-item" style="margin: 0; padding: 10px 0; border-bottom: 1px solid #eee;">
-          <div class="checkbox"></div>
-          <span style="font-size: 14px;">Prepare clue cards (10-15 clues)</span>
-        </div>
-        <div class="checklist-item" style="margin: 0; padding: 10px 0; border-bottom: 1px solid #eee;">
-          <div class="checkbox"></div>
-          <span style="font-size: 14px;">Buy prizes for winners</span>
-        </div>
-        <div class="checklist-item" style="margin: 0; padding: 10px 0;">
-          <div class="checkbox"></div>
-          <span style="font-size: 14px;">Scout and mark locations</span>
-        </div>
+      <!-- Tasks Preview (collapsed) -->
+      <div class="card" style="padding: 12px; margin-bottom: 12px;">
+        <div style="font-size: 12px; color: #007AFF; font-weight: 600; margin-bottom: 8px;">✓ TASKS (12 total)</div>
+        <div style="font-size: 13px; color: #666;">Prepare clue cards, Buy prizes, Scout locations, Form teams...</div>
       </div>
 
-      <div class="section-header">
-        <h2>Suggested Locations</h2>
-      </div>
-      <div class="location-card">
-        <div class="location-icon">📍</div>
-        <div class="location-info">
-          <h4>Cubbon Park</h4>
-          <p>Great for outdoor hunts • 3.2 km away</p>
-        </div>
-      </div>
-      <div class="location-card">
-        <div class="location-icon">📍</div>
-        <div class="location-info">
-          <h4>Phoenix Mall</h4>
-          <p>Indoor option • 5.1 km away</p>
-        </div>
+      <!-- Reviews -->
+      <div class="section-header" style="margin-top: 20px;">
+        <h2>Reviews</h2>
+        <a href="#">See all (234)</a>
       </div>
 
-      <button class="btn btn-primary clickable" style="margin-top: 20px;" onclick="showScreen('create-plan')">Use This Template</button>
+      <div class="card" style="padding: 12px;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+          <div class="avatar small">R</div>
+          <div style="flex: 1;">
+            <span style="font-weight: 600; font-size: 13px;">Riya M.</span>
+            <span style="color: #FFB800; font-size: 12px; margin-left: 6px;">★★★★★</span>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: #444;">"The step-by-step guide made organizing so easy! The pro tips saved me a lot of mistakes."</p>
+        <div style="font-size: 11px; color: #888; margin-top: 6px;">Used for team building • 20 people</div>
+      </div>
+
+      <div class="card" style="padding: 12px;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+          <div class="avatar small">A</div>
+          <div style="flex: 1;">
+            <span style="font-weight: 600; font-size: 13px;">Amit K.</span>
+            <span style="color: #FFB800; font-size: 12px; margin-left: 6px;">★★★★</span>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: #444;">"Great template! Budget calculator was super helpful."</p>
+        <div style="font-size: 11px; color: #888; margin-top: 6px;">Used for birthday party • 15 people</div>
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <button class="btn btn-outline clickable" style="flex: 1;" onclick="showScreen('template-guided')">Preview Guide</button>
+        <button class="btn btn-primary clickable" style="flex: 1;" onclick="showScreen('create-plan')">Use ₹99</button>
+      </div>
     </div>
   </div>
 
-  <!-- Screen 5: Create Plan -->
+  <!-- Screen 5: Template Guided View (Full Detail) -->
+  <div class="screen" id="template-guided">
+    <div class="status-bar">9:41</div>
+    <div class="header header-with-back">
+      <div class="back-btn clickable" onclick="showScreen('template-detail')">←</div>
+      <h1 style="font-size: 20px;">Full Guide Preview</h1>
+    </div>
+    <div class="content">
+      <p style="font-size: 13px; color: #666; margin-bottom: 16px;">This is what you'll get with the template</p>
+
+      <!-- Phase 1 -->
+      <div class="card" style="margin-bottom: 16px; border-left: 3px solid #007AFF;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div>
+            <div style="font-size: 11px; color: #007AFF; font-weight: 600;">PHASE 1</div>
+            <h3 style="font-size: 16px;">Planning</h3>
+          </div>
+          <span style="font-size: 12px; color: #666;">2 weeks before</span>
+        </div>
+
+        <!-- Task with guidance -->
+        <div class="checklist-item clickable" onclick="showScreen('task-detail')" style="background: #f9f9f9; margin-bottom: 8px;">
+          <div class="checkbox"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">Prepare clue cards</div>
+            <div style="font-size: 12px; color: #007AFF;">💡 Pro tip available</div>
+          </div>
+          <span style="color: #888;">→</span>
+        </div>
+
+        <div class="checklist-item" style="background: #f9f9f9; margin-bottom: 8px;">
+          <div class="checkbox"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">Scout and mark locations</div>
+            <div style="font-size: 12px; color: #666;">🔄 Flexible</div>
+          </div>
+        </div>
+
+        <div class="checklist-item" style="background: #f9f9f9;">
+          <div class="checkbox"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">Buy prizes for winners</div>
+            <div style="font-size: 12px; color: #666;">🔒 Required</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="card" style="margin-bottom: 16px; border-left: 3px solid #FF9500;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div>
+            <div style="font-size: 11px; color: #FF9500; font-weight: 600;">PHASE 2</div>
+            <h3 style="font-size: 16px;">Preparation</h3>
+          </div>
+          <span style="font-size: 12px; color: #666;">3 days before</span>
+        </div>
+
+        <div class="checklist-item" style="background: #f9f9f9; margin-bottom: 8px;">
+          <div class="checkbox"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">Confirm attendees</div>
+          </div>
+        </div>
+
+        <div class="checklist-item" style="background: #f9f9f9; margin-bottom: 8px;">
+          <div class="checkbox"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">Order food & drinks</div>
+            <div style="font-size: 12px; color: #007AFF;">📎 Service linked</div>
+          </div>
+        </div>
+
+        <div class="checklist-item" style="background: #f9f9f9;">
+          <div class="checkbox"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 14px; font-weight: 500;">Print team badges</div>
+            <div style="font-size: 12px; color: #666;">💡 Optional but fun</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resources Section -->
+      <div class="section-header">
+        <h2>📎 Resources Included</h2>
+      </div>
+
+      <div class="card" style="padding: 12px; margin-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 24px;">📊</span>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Budget Calculator</div>
+            <div style="font-size: 12px; color: #666;">Auto-adjusts based on attendees</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 12px; margin-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 24px;">✅</span>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Printable Checklist</div>
+            <div style="font-size: 12px; color: #666;">PDF download</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 12px; margin-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 24px;">📍</span>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Venue Recommendations</div>
+            <div style="font-size: 12px; color: #666;">5 curated options near you</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 24px;">💬</span>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Sample Invite Message</div>
+            <div style="font-size: 12px; color: #666;">Copy-paste for WhatsApp</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary clickable" style="margin-top: 20px;" onclick="showScreen('create-plan')">Use This Template - ₹99</button>
+    </div>
+  </div>
+
+  <!-- Screen 6: Create Plan (with progressive enhancement) -->
   <div class="screen" id="create-plan">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
@@ -1044,37 +1200,33 @@
       <h1 style="font-size: 20px;">Create Plan</h1>
     </div>
     <div class="content">
-      <p style="color: #666; margin-bottom: 20px;">Using template: <strong>Treasure Hunt</strong></p>
+      <!-- Source indicator -->
+      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+        <span style="background: #e8f4ff; color: #007AFF; padding: 6px 12px; border-radius: 6px; font-size: 12px;">📋 From template: Treasure Hunt</span>
+      </div>
 
       <div class="input-group">
         <label>Plan Name</label>
-        <input type="text" placeholder="e.g., Office Treasure Hunt">
+        <input type="text" placeholder="e.g., Office Treasure Hunt" value="Office Treasure Hunt">
       </div>
 
-      <div class="input-group">
-        <label>Date</label>
-        <input type="text" placeholder="Select date" value="Saturday, Mar 15, 2026">
-      </div>
-
-      <div class="input-group">
-        <label>Time</label>
-        <input type="text" placeholder="Select time" value="3:00 PM">
+      <div style="display: flex; gap: 12px;">
+        <div class="input-group" style="flex: 1;">
+          <label>Date</label>
+          <input type="text" placeholder="Select date" value="Mar 15, 2026">
+        </div>
+        <div class="input-group" style="flex: 1;">
+          <label>Time</label>
+          <input type="text" placeholder="Select time" value="3:00 PM">
+        </div>
       </div>
 
       <div class="input-group">
         <label>Location</label>
-        <input type="text" placeholder="Search or enter location">
+        <input type="text" placeholder="Search or enter location" value="Cubbon Park">
       </div>
 
-      <div class="location-card" style="border: 2px solid #007AFF;">
-        <div class="location-icon">📍</div>
-        <div class="location-info">
-          <h4>Cubbon Park</h4>
-          <p>Great for outdoor hunts • Suggested</p>
-        </div>
-      </div>
-
-      <div class="input-group" style="margin-top: 16px;">
+      <div class="input-group">
         <label>Expected attendees</label>
         <select>
           <option>4-8 people</option>
@@ -1084,16 +1236,75 @@
         </select>
       </div>
 
-      <div class="input-group">
-        <label>Description (optional)</label>
-        <textarea style="width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 10px; font-size: 16px; min-height: 80px; font-family: inherit;" placeholder="Add a fun description for your invitees..."></textarea>
+      <!-- Tasks Section (Basic) -->
+      <div class="section-header" style="margin-top: 24px;">
+        <h2>Tasks</h2>
+        <span style="font-size: 12px; color: #34C759;">✓ 12 from template</span>
       </div>
 
-      <div class="section-header" style="margin-top: 24px;">
-        <h2>Add Services</h2>
-        <a href="#">View all</a>
+      <div class="checklist-item clickable" onclick="showScreen('task-detail')">
+        <div class="checkbox"></div>
+        <div style="flex: 1;">
+          <div style="font-size: 14px; font-weight: 500;">Prepare clue cards</div>
+          <div style="font-size: 12px; color: #007AFF;">💡 Has guidance</div>
+        </div>
+        <span style="color: #888;">→</span>
       </div>
-      <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Book venues, order food, or add extras to your plan</p>
+
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div style="flex: 1;">
+          <div style="font-size: 14px; font-weight: 500;">Buy prizes for winners</div>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div style="flex: 1;">
+          <div style="font-size: 14px; font-weight: 500;">Scout and mark locations</div>
+        </div>
+      </div>
+
+      <button class="btn btn-secondary" style="margin-top: 8px; padding: 12px;">+ Add Task</button>
+
+      <!-- Progressive Enhancement Options -->
+      <div class="section-header" style="margin-top: 24px;">
+        <h2>Enhance Your Plan</h2>
+      </div>
+      <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Add more structure (optional)</p>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;">
+        <div class="clickable" style="background: #e8f4ff; border: 1px solid #007AFF; padding: 10px 14px; border-radius: 8px; font-size: 13px; color: #007AFF;">
+          ✓ Phases
+        </div>
+        <div class="clickable" style="background: #f5f5f5; border: 1px solid #ddd; padding: 10px 14px; border-radius: 8px; font-size: 13px; color: #666;">
+          + Budget
+        </div>
+        <div class="clickable" style="background: #f5f5f5; border: 1px solid #ddd; padding: 10px 14px; border-radius: 8px; font-size: 13px; color: #666;">
+          + Tips
+        </div>
+        <div class="clickable" style="background: #f5f5f5; border: 1px solid #ddd; padding: 10px 14px; border-radius: 8px; font-size: 13px; color: #666;">
+          + Resources
+        </div>
+      </div>
+
+      <!-- Phases (enabled) -->
+      <div class="card" style="border: 1px solid #007AFF; padding: 12px; margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 12px; color: #007AFF; font-weight: 600;">📋 PHASES</span>
+          <span style="font-size: 11px; color: #666;">From template</span>
+        </div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <span style="background: #007AFF; color: white; padding: 6px 10px; border-radius: 6px; font-size: 11px;">Planning (3 tasks)</span>
+          <span style="background: #FF9500; color: white; padding: 6px 10px; border-radius: 6px; font-size: 11px;">Prep (4 tasks)</span>
+          <span style="background: #34C759; color: white; padding: 6px 10px; border-radius: 6px; font-size: 11px;">Day-of (5 tasks)</span>
+        </div>
+      </div>
+
+      <!-- Add Services -->
+      <div class="section-header">
+        <h2>Add Services</h2>
+      </div>
 
       <div class="service-card clickable" onclick="showScreen('book-venue')">
         <div class="service-icon venue">📍</div>
@@ -1113,25 +1324,107 @@
         <button class="service-action">Add</button>
       </div>
 
-      <div class="service-card clickable" onclick="showScreen('book-movie')">
-        <div class="service-icon movie">🎬</div>
-        <div class="service-info">
-          <h4>Book Movie Tickets</h4>
-          <p>Group bookings with best seats</p>
-        </div>
-        <button class="service-action">Add</button>
-      </div>
-
-      <div class="service-card clickable" onclick="showScreen('book-venue')">
-        <div class="service-icon equipment">🎮</div>
-        <div class="service-info">
-          <h4>Rent Equipment</h4>
-          <p>Games, sports gear, party supplies</p>
-        </div>
-        <button class="service-action">Add</button>
-      </div>
-
       <button class="btn btn-primary clickable" style="margin-top: 20px;" onclick="showScreen('invite')">Create & Invite Friends</button>
+    </div>
+  </div>
+
+  <!-- Screen 7: Task Detail (Expanded with full guidance) -->
+  <div class="screen" id="task-detail">
+    <div class="status-bar">9:41</div>
+    <div class="header header-with-back">
+      <div class="back-btn clickable" onclick="showScreen('create-plan')">←</div>
+      <h1 style="font-size: 20px;">Task Details</h1>
+    </div>
+    <div class="content">
+      <!-- Task Header -->
+      <div class="card" style="padding: 16px; margin-bottom: 16px;">
+        <div style="display: flex; gap: 12px; align-items: start;">
+          <div class="checkbox" style="margin-top: 2px;"></div>
+          <div style="flex: 1;">
+            <h2 style="font-size: 18px; margin-bottom: 4px;">Prepare clue cards</h2>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <span style="background: #e8f4ff; color: #007AFF; padding: 4px 8px; border-radius: 4px; font-size: 11px;">Phase 1: Planning</span>
+              <span style="background: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 4px; font-size: 11px;">🔒 Required</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- When -->
+      <div class="card" style="padding: 14px; margin-bottom: 12px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 20px;">📅</span>
+          <div>
+            <div style="font-size: 12px; color: #666;">WHEN</div>
+            <div style="font-size: 14px; font-weight: 600;">1-2 weeks before event</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instructions -->
+      <div class="section-header">
+        <h2>📝 Instructions</h2>
+      </div>
+      <div class="card" style="padding: 14px; margin-bottom: 16px;">
+        <ol style="font-size: 14px; line-height: 1.8; padding-left: 20px; color: #444;">
+          <li>Decide number of clues (10-15 works best)</li>
+          <li>Create a mix of easy, medium, and hard clues</li>
+          <li>Write location hints that aren't too obvious</li>
+          <li>Add fun riddles or puzzles where possible</li>
+          <li>Print on cardstock for durability</li>
+          <li>Number each card for tracking</li>
+        </ol>
+      </div>
+
+      <!-- Pro Tips -->
+      <div class="section-header">
+        <h2>💡 Pro Tips</h2>
+        <span style="font-size: 11px; background: #fbbf24; color: #000; padding: 2px 8px; border-radius: 4px;">From Creator</span>
+      </div>
+      <div class="card" style="padding: 14px; margin-bottom: 16px; background: #fffbeb; border: 1px solid #fbbf24;">
+        <p style="font-size: 14px; line-height: 1.6; color: #92400e;">
+          "Laminate the clue cards if playing outdoors - learned this the hard way when it started drizzling! Also, take photos of where you place each clue, you'll thank yourself later."
+        </p>
+        <div style="font-size: 12px; color: #92400e; margin-top: 8px; font-style: italic;">— EventPro Studios</div>
+      </div>
+
+      <!-- Flexibility Note -->
+      <div class="section-header">
+        <h2>🔄 Flexibility</h2>
+      </div>
+      <div class="card" style="padding: 14px; margin-bottom: 16px;">
+        <p style="font-size: 14px; line-height: 1.6; color: #666;">
+          For kids (under 10), use picture-based clues instead of text. For corporate events, add company trivia questions as clues.
+        </p>
+      </div>
+
+      <!-- Adapts to your plan -->
+      <div class="card" style="padding: 14px; margin-bottom: 16px; background: #f0f7ff; border: 1px solid #007AFF;">
+        <div style="font-size: 12px; color: #007AFF; font-weight: 600; margin-bottom: 6px;">📊 ADAPTED FOR YOUR PLAN</div>
+        <p style="font-size: 14px; color: #444;">
+          You have <strong>12-20 people</strong> → Recommended: 12-15 clue cards, split into 3-4 teams
+        </p>
+      </div>
+
+      <!-- Assignee -->
+      <div class="section-header">
+        <h2>Assigned To</h2>
+      </div>
+      <div class="card" style="padding: 12px; margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="avatar">R</div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">You</div>
+            <div style="font-size: 12px; color: #666;">Tap to reassign</div>
+          </div>
+          <button style="background: #eee; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px;">Change</button>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px;">
+        <button class="btn btn-outline clickable" style="flex: 1;" onclick="showScreen('create-plan')">Back</button>
+        <button class="btn btn-primary clickable" style="flex: 1;" onclick="showScreen('create-plan')">Mark Done</button>
+      </div>
     </div>
   </div>
 
@@ -1396,6 +1689,18 @@
         <button class="btn btn-outline clickable" style="flex: 1; padding: 12px;" onclick="showScreen('create-plan')">Edit Plan</button>
         <button class="btn btn-primary clickable" style="flex: 1; padding: 12px;" onclick="showScreen('invite')">Invite More</button>
       </div>
+
+      <!-- Publish as Template -->
+      <div class="card clickable" onclick="showScreen('publish-template')" style="margin-top: 16px; padding: 14px; background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%); border: 1px solid #007AFF;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 24px;">📢</span>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px; color: #007AFF;">Publish as Template</div>
+            <div style="font-size: 12px; color: #666;">Share your plan and earn money!</div>
+          </div>
+          <span style="color: #007AFF;">→</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1520,7 +1825,141 @@
     </div>
   </div>
 
-  <!-- Screen 10: Book Venue -->
+  <!-- Screen 10: Publish as Template -->
+  <div class="screen" id="publish-template">
+    <div class="status-bar">9:41</div>
+    <div class="header header-with-back">
+      <div class="back-btn clickable" onclick="showScreen('plan-overview')">←</div>
+      <h1 style="font-size: 20px;">Publish Template</h1>
+    </div>
+    <div class="content">
+      <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; text-align: center; margin-bottom: 20px;">
+        <div style="font-size: 32px; margin-bottom: 8px;">📢</div>
+        <h3 style="margin-bottom: 4px;">Share your plan with others!</h3>
+        <p style="opacity: 0.9; font-size: 13px;">Turn your plan into a template others can use</p>
+      </div>
+
+      <!-- Template Quality Score -->
+      <div class="card" style="padding: 16px; margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h3 style="font-size: 14px;">Template Quality</h3>
+          <span style="background: #34C759; color: white; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600;">Good</span>
+        </div>
+        <div style="height: 8px; background: #eee; border-radius: 4px; margin-bottom: 12px;">
+          <div style="width: 70%; height: 100%; background: linear-gradient(90deg, #34C759, #30D158); border-radius: 4px;"></div>
+        </div>
+        <div style="font-size: 12px; color: #666;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+            <span style="color: #34C759;">✓</span> Has tasks (12)
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+            <span style="color: #34C759;">✓</span> Has phases (3)
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+            <span style="color: #FF9500;">○</span> Add tips to improve (+15%)
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="color: #FF9500;">○</span> Add resources to improve (+10%)
+          </div>
+        </div>
+      </div>
+
+      <!-- Template Details -->
+      <div class="input-group">
+        <label>Template Name</label>
+        <input type="text" value="Office Treasure Hunt">
+      </div>
+
+      <div class="input-group">
+        <label>Category</label>
+        <select>
+          <option>Adventure</option>
+          <option selected>Team Building</option>
+          <option>Party</option>
+          <option>Sports</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Description (for marketplace)</label>
+        <textarea style="width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 10px; font-size: 14px; min-height: 80px; font-family: inherit;" placeholder="Describe what makes this plan great...">Organize an exciting treasure hunt for your team! Perfect for team building, birthdays, or just a fun day out.</textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Cover Image</label>
+        <div class="card-image" style="height: 100px; border: 2px dashed #ddd;">
+          + Upload cover image
+        </div>
+      </div>
+
+      <!-- Pricing -->
+      <div class="section-header" style="margin-top: 20px;">
+        <h2>Pricing</h2>
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+        <div class="clickable" style="flex: 1; background: #f5f5f5; border: 1px solid #ddd; padding: 14px; border-radius: 10px; text-align: center;">
+          <div style="font-size: 18px; font-weight: 700;">Free</div>
+          <div style="font-size: 11px; color: #666;">Anyone can use</div>
+        </div>
+        <div class="clickable" style="flex: 1; background: #e8f4ff; border: 2px solid #007AFF; padding: 14px; border-radius: 10px; text-align: center;">
+          <div style="font-size: 18px; font-weight: 700; color: #007AFF;">₹99</div>
+          <div style="font-size: 11px; color: #007AFF;">You earn ₹69</div>
+        </div>
+        <div class="clickable" style="flex: 1; background: #f5f5f5; border: 1px solid #ddd; padding: 14px; border-radius: 10px; text-align: center;">
+          <div style="font-size: 18px; font-weight: 700;">₹199</div>
+          <div style="font-size: 11px; color: #666;">You earn ₹139</div>
+        </div>
+      </div>
+
+      <!-- Add more to increase value -->
+      <div class="section-header">
+        <h2>Add More Value</h2>
+      </div>
+      <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Premium templates have better reviews and sales</p>
+
+      <div class="card clickable" style="padding: 12px; margin-bottom: 8px; border: 1px dashed #007AFF;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 24px;">💡</span>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Add Pro Tips</div>
+            <div style="font-size: 12px; color: #666;">Share your learnings with users</div>
+          </div>
+          <span style="color: #007AFF;">+ Add</span>
+        </div>
+      </div>
+
+      <div class="card clickable" style="padding: 12px; margin-bottom: 8px; border: 1px dashed #007AFF;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 24px;">📎</span>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Add Resources</div>
+            <div style="font-size: 12px; color: #666;">Checklists, links, calculators</div>
+          </div>
+          <span style="color: #007AFF;">+ Add</span>
+        </div>
+      </div>
+
+      <div class="card clickable" style="padding: 12px; margin-bottom: 8px; border: 1px dashed #007AFF;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 24px;">🎥</span>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Record Intro Video</div>
+            <div style="font-size: 12px; color: #666;">1-2 min walkthrough (optional)</div>
+          </div>
+          <span style="color: #007AFF;">+ Add</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary clickable" style="margin-top: 20px;" onclick="showScreen('marketplace')">Submit for Review</button>
+      <p style="text-align: center; font-size: 12px; color: #666; margin-top: 8px;">
+        We'll review within 24-48 hours
+      </p>
+    </div>
+  </div>
+
+  <!-- Screen 11: Book Venue -->
   <div class="screen" id="book-venue">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
@@ -2103,10 +2542,13 @@
       'signup': 'Signup (WhatsApp)',
       'home': 'Home (Dashboard)',
       'marketplace': 'Template Marketplace',
-      'template-detail': 'Template Detail',
-      'create-plan': 'Create Plan + Services',
+      'template-detail': 'Template Landing (Marketplace)',
+      'template-guided': 'Template Guide Preview (Phases + Tasks)',
+      'create-plan': 'Create Plan (Progressive Enhancement)',
+      'task-detail': 'Task Detail (Full Guidance)',
       'invite': 'Invite Friends',
       'plan-overview': 'Plan Page (Overview + Tasks + Services)',
+      'publish-template': 'Publish as Template (Marketplace)',
       'plan-forum': 'Plan - Forum',
       'plan-album': 'Plan - Album',
       'book-venue': 'Book a Venue',
