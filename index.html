@@ -785,7 +785,7 @@
           <input type="tel" class="phone-number" placeholder="98765 43210">
         </div>
       </div>
-      <button class="btn btn-primary">Send OTP</button>
+      <button class="btn btn-primary clickable" onclick="showScreen('home')">Send OTP</button>
       <p style="text-align: center; margin-top: 16px; font-size: 13px; color: #666;">
         We'll send a verification code via WhatsApp
       </p>
@@ -809,7 +809,7 @@
         <h2>Upcoming</h2>
       </div>
 
-      <div class="card">
+      <div class="card clickable" onclick="showScreen('plan-overview')">
         <div class="card-row">
           <div class="card-image small">Pickleball</div>
           <div>
@@ -829,7 +829,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card clickable" onclick="showScreen('plan-overview')">
         <div class="card-row">
           <div class="card-image small">Game</div>
           <div>
@@ -865,18 +865,18 @@
       </div>
     </div>
 
-    <div class="fab">+</div>
+    <div class="fab clickable" onclick="showScreen('marketplace')">+</div>
 
     <div class="tab-bar">
-      <div class="tab-item active">
+      <div class="tab-item active clickable" onclick="showScreen('home')">
         <div class="tab-icon"></div>
         <span>Home</span>
       </div>
-      <div class="tab-item">
+      <div class="tab-item clickable" onclick="showScreen('marketplace')">
         <div class="tab-icon"></div>
         <span>Explore</span>
       </div>
-      <div class="tab-item">
+      <div class="tab-item clickable">
         <div class="tab-icon"></div>
         <span>Profile</span>
       </div>
@@ -905,7 +905,7 @@
         <h2>Popular</h2>
       </div>
 
-      <div class="card">
+      <div class="card clickable" onclick="showScreen('template-detail')">
         <div class="card-image">Treasure Hunt Illustration</div>
         <h3>Treasure Hunt</h3>
         <p>An exciting scavenger hunt with clues, puzzles, and prizes!</p>
@@ -913,7 +913,7 @@
         <span class="tag">4-20 people</span>
       </div>
 
-      <div class="card">
+      <div class="card clickable" onclick="showScreen('template-detail')">
         <div class="card-image">Pickleball Illustration</div>
         <h3>Pickleball Meetup</h3>
         <p>Organize a fun pickleball session with friends</p>
@@ -921,7 +921,7 @@
         <span class="tag">4-8 people</span>
       </div>
 
-      <div class="card">
+      <div class="card clickable" onclick="showScreen('template-detail')">
         <div class="card-image">Board Games Illustration</div>
         <h3>Board Game Night</h3>
         <p>Strategy games, party games, and snacks!</p>
@@ -931,15 +931,15 @@
     </div>
 
     <div class="tab-bar">
-      <div class="tab-item">
+      <div class="tab-item clickable" onclick="showScreen('home')">
         <div class="tab-icon"></div>
         <span>Home</span>
       </div>
-      <div class="tab-item active">
+      <div class="tab-item active clickable" onclick="showScreen('marketplace')">
         <div class="tab-icon"></div>
         <span>Explore</span>
       </div>
-      <div class="tab-item">
+      <div class="tab-item clickable">
         <div class="tab-icon"></div>
         <span>Profile</span>
       </div>
@@ -950,7 +950,7 @@
   <div class="screen" id="template-detail">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('marketplace')">←</div>
       <h1 style="font-size: 20px;">Treasure Hunt</h1>
     </div>
     <div class="content">
@@ -1032,7 +1032,7 @@
         </div>
       </div>
 
-      <button class="btn btn-primary" style="margin-top: 20px;">Use This Template</button>
+      <button class="btn btn-primary clickable" style="margin-top: 20px;" onclick="showScreen('create-plan')">Use This Template</button>
     </div>
   </div>
 
@@ -1040,7 +1040,7 @@
   <div class="screen" id="create-plan">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('template-detail')">←</div>
       <h1 style="font-size: 20px;">Create Plan</h1>
     </div>
     <div class="content">
@@ -1095,7 +1095,7 @@
       </div>
       <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Book venues, order food, or add extras to your plan</p>
 
-      <div class="service-card">
+      <div class="service-card clickable" onclick="showScreen('book-venue')">
         <div class="service-icon venue">📍</div>
         <div class="service-info">
           <h4>Book a Venue</h4>
@@ -1104,7 +1104,7 @@
         <button class="service-action">Add</button>
       </div>
 
-      <div class="service-card">
+      <div class="service-card clickable" onclick="showScreen('order-food')">
         <div class="service-icon food">🍕</div>
         <div class="service-info">
           <h4>Order Food & Drinks</h4>
@@ -1113,7 +1113,7 @@
         <button class="service-action">Add</button>
       </div>
 
-      <div class="service-card">
+      <div class="service-card clickable" onclick="showScreen('book-movie')">
         <div class="service-icon movie">🎬</div>
         <div class="service-info">
           <h4>Book Movie Tickets</h4>
@@ -1122,7 +1122,7 @@
         <button class="service-action">Add</button>
       </div>
 
-      <div class="service-card">
+      <div class="service-card clickable" onclick="showScreen('book-venue')">
         <div class="service-icon equipment">🎮</div>
         <div class="service-info">
           <h4>Rent Equipment</h4>
@@ -1131,7 +1131,7 @@
         <button class="service-action">Add</button>
       </div>
 
-      <button class="btn btn-primary" style="margin-top: 20px;">Create & Invite Friends</button>
+      <button class="btn btn-primary clickable" style="margin-top: 20px;" onclick="showScreen('invite')">Create & Invite Friends</button>
     </div>
   </div>
 
@@ -1139,7 +1139,7 @@
   <div class="screen" id="invite">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('create-plan')">←</div>
       <h1 style="font-size: 20px;">Invite Friends</h1>
     </div>
     <div class="content">
@@ -1204,7 +1204,7 @@
         Friends not on Only Plans will get a signup link
       </p>
 
-      <button class="btn btn-primary">Send Invites (2 selected)</button>
+      <button class="btn btn-primary clickable" onclick="showScreen('plan-overview')">Send Invites (2 selected)</button>
     </div>
   </div>
 
@@ -1212,13 +1212,13 @@
   <div class="screen" id="plan-overview">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('home')">←</div>
       <h1 style="font-size: 20px;">Office Treasure Hunt</h1>
     </div>
     <div class="plan-tabs">
-      <div class="plan-tab active">Overview</div>
-      <div class="plan-tab">Forum</div>
-      <div class="plan-tab">Album</div>
+      <div class="plan-tab active clickable" onclick="showScreen('plan-overview')">Overview</div>
+      <div class="plan-tab clickable" onclick="showScreen('plan-forum')">Forum</div>
+      <div class="plan-tab clickable" onclick="showScreen('plan-album')">Album</div>
     </div>
     <div class="content">
       <!-- Cover Image -->
@@ -1385,7 +1385,7 @@
           <div style="font-size: 12px; color: #666;">Total bookings</div>
           <div style="font-size: 18px; font-weight: 700;">₹4,500</div>
         </div>
-        <button style="background: #007AFF; color: white; border: none; padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;">Split Bill</button>
+        <button class="clickable" style="background: #007AFF; color: white; border: none; padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;" onclick="showScreen('split-bill')">Split Bill</button>
       </div>
 
       <!-- Quick Actions -->
@@ -1393,8 +1393,8 @@
         <h2>Quick Actions</h2>
       </div>
       <div style="display: flex; gap: 12px;">
-        <button class="btn btn-outline" style="flex: 1; padding: 12px;">Edit Plan</button>
-        <button class="btn btn-primary" style="flex: 1; padding: 12px;">Invite More</button>
+        <button class="btn btn-outline clickable" style="flex: 1; padding: 12px;" onclick="showScreen('create-plan')">Edit Plan</button>
+        <button class="btn btn-primary clickable" style="flex: 1; padding: 12px;" onclick="showScreen('invite')">Invite More</button>
       </div>
     </div>
   </div>
@@ -1403,13 +1403,13 @@
   <div class="screen" id="plan-forum">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('home')">←</div>
       <h1 style="font-size: 20px;">Office Treasure Hunt</h1>
     </div>
     <div class="plan-tabs">
-      <div class="plan-tab">Overview</div>
-      <div class="plan-tab active">Forum</div>
-      <div class="plan-tab">Album</div>
+      <div class="plan-tab clickable" onclick="showScreen('plan-overview')">Overview</div>
+      <div class="plan-tab active clickable" onclick="showScreen('plan-forum')">Forum</div>
+      <div class="plan-tab clickable" onclick="showScreen('plan-album')">Album</div>
     </div>
     <div class="content" style="padding-bottom: 140px;">
       <div class="forum-post">
@@ -1485,13 +1485,13 @@
   <div class="screen" id="plan-album">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('home')">←</div>
       <h1 style="font-size: 20px;">Office Treasure Hunt</h1>
     </div>
     <div class="plan-tabs">
-      <div class="plan-tab">Overview</div>
-      <div class="plan-tab">Forum</div>
-      <div class="plan-tab active">Album</div>
+      <div class="plan-tab clickable" onclick="showScreen('plan-overview')">Overview</div>
+      <div class="plan-tab clickable" onclick="showScreen('plan-forum')">Forum</div>
+      <div class="plan-tab active clickable" onclick="showScreen('plan-album')">Album</div>
     </div>
     <div class="content">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
@@ -1524,7 +1524,7 @@
   <div class="screen" id="book-venue">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('create-plan')">←</div>
       <h1 style="font-size: 20px;">Book a Venue</h1>
     </div>
     <div class="content">
@@ -1601,7 +1601,7 @@
   <div class="screen" id="book-movie">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('create-plan')">←</div>
       <h1 style="font-size: 20px;">Book Movie Tickets</h1>
     </div>
     <div class="content">
@@ -1695,7 +1695,7 @@
   <div class="screen" id="order-food">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('create-plan')">←</div>
       <h1 style="font-size: 20px;">Order Food & Drinks</h1>
     </div>
     <div class="content" style="padding-bottom: 160px;">
@@ -1789,11 +1789,11 @@
     </div>
   </div>
 
-  <!-- Screen 13: Split Bill -->
+  <!-- Screen 14: Split Bill -->
   <div class="screen" id="split-bill">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('plan-overview')">←</div>
       <h1 style="font-size: 20px;">Split Bill</h1>
     </div>
     <div class="content">
@@ -1809,8 +1809,8 @@
         <h2>Split Type</h2>
       </div>
       <div style="display: flex; gap: 8px; margin-bottom: 20px;">
-        <button style="flex: 1; padding: 14px; background: #007AFF; color: white; border: none; border-radius: 10px; font-weight: 600;">Equal Split</button>
-        <button style="flex: 1; padding: 14px; background: #eee; color: #333; border: none; border-radius: 10px; font-weight: 600;">Custom Split</button>
+        <button class="clickable" style="flex: 1; padding: 14px; background: #007AFF; color: white; border: none; border-radius: 10px; font-weight: 600;">Equal Split</button>
+        <button class="clickable" style="flex: 1; padding: 14px; background: #eee; color: #333; border: none; border-radius: 10px; font-weight: 600;" onclick="showScreen('split-bill-custom')">Custom Split</button>
       </div>
 
       <!-- Equal Split View -->
@@ -1917,18 +1917,18 @@
         </div>
       </div>
 
-      <button class="btn btn-primary" style="margin-top: 20px;">Send Payment Requests</button>
+      <button class="btn btn-primary clickable" style="margin-top: 20px;" onclick="showScreen('pay-share')">Send Payment Requests</button>
       <p style="text-align: center; font-size: 12px; color: #666; margin-top: 8px;">
         Attendees will receive WhatsApp message with your UPI details
       </p>
     </div>
   </div>
 
-  <!-- Screen 14: Split Bill - Custom -->
+  <!-- Screen 15: Split Bill - Custom -->
   <div class="screen" id="split-bill-custom">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('split-bill')">←</div>
       <h1 style="font-size: 20px;">Custom Split</h1>
     </div>
     <div class="content">
@@ -1992,15 +1992,15 @@
         + 3 more attendees
       </p>
 
-      <button class="btn btn-primary" style="margin-top: 12px;">Save & Send Requests</button>
+      <button class="btn btn-primary clickable" style="margin-top: 12px;" onclick="showScreen('pay-share')">Save & Send Requests</button>
     </div>
   </div>
 
-  <!-- Screen 15: Pay Share (Attendee View) -->
+  <!-- Screen 16: Pay Share (Attendee View) -->
   <div class="screen" id="pay-share">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
-      <div class="back-btn">←</div>
+      <div class="back-btn clickable" onclick="showScreen('plan-overview')">←</div>
       <h1 style="font-size: 20px;">Pay Your Share</h1>
     </div>
     <div class="content">
@@ -2075,7 +2075,7 @@
         <button style="flex: 1; padding: 14px; background: #ff9500; color: white; border: none; border-radius: 10px; font-weight: 600;">GPay</button>
       </div>
 
-      <button class="btn btn-primary" style="margin-top: 20px;">I've Paid - Notify Host</button>
+      <button class="btn btn-primary clickable" style="margin-top: 20px;" onclick="showScreen('plan-overview')">I've Paid - Notify Host</button>
       <p style="text-align: center; font-size: 12px; color: #666; margin-top: 8px;">
         Host will confirm once payment is received
       </p>
@@ -2095,7 +2095,8 @@
 
     // Update nav
     document.querySelectorAll('.wireframe-nav a').forEach(a => a.classList.remove('active'));
-    document.getElementById('nav-' + screenId).classList.add('active');
+    const navEl = document.getElementById('nav-' + screenId);
+    if (navEl) navEl.classList.add('active');
 
     // Update label
     const labels = {
@@ -2116,7 +2117,22 @@
       'pay-share': 'Pay Your Share - Attendee View'
     };
     document.getElementById('screen-label').textContent = 'Screen: ' + labels[screenId];
+
+    // Scroll to top of phone frame
+    document.querySelector('.phone-frame').scrollTop = 0;
   }
+
+  // Make elements clickable
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add cursor pointer to clickable elements
+    const style = document.createElement('style');
+    style.textContent = `
+      .clickable { cursor: pointer; transition: transform 0.1s, opacity 0.1s; }
+      .clickable:hover { opacity: 0.8; }
+      .clickable:active { transform: scale(0.98); }
+    `;
+    document.head.appendChild(style);
+  });
 </script>
 
 </body>
