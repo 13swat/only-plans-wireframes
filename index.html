@@ -640,6 +640,110 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+
+    /* Services */
+    .service-card {
+      display: flex;
+      gap: 12px;
+      padding: 14px;
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      align-items: center;
+      border: 1px solid #eee;
+    }
+
+    .service-card.selected {
+      border: 2px solid #007AFF;
+      background: #f0f7ff;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .service-icon.venue { background: #e8f5e9; }
+    .service-icon.food { background: #fff3e0; }
+    .service-icon.movie { background: #e3f2fd; }
+    .service-icon.equipment { background: #fce4ec; }
+    .service-icon.transport { background: #f3e5f5; }
+
+    .service-info {
+      flex: 1;
+    }
+
+    .service-info h4 {
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .service-info p {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .service-action {
+      padding: 8px 14px;
+      background: #007AFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .service-action.booked {
+      background: #34C759;
+    }
+
+    .service-status {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .service-status.confirmed {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .service-status.pending {
+      background: #fff3e0;
+      color: #f57c00;
+    }
+
+    .booking-summary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .booking-summary h3 {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 4px;
+    }
+
+    .booking-summary .amount {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .booking-summary .details {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 8px;
+    }
   </style>
 </head>
 <body>
@@ -653,9 +757,12 @@
   <a href="#" onclick="showScreen('create-plan')" id="nav-create-plan">5. Create Plan</a>
   <a href="#" onclick="showScreen('invite')" id="nav-invite">6. Invite</a>
   <a href="#" onclick="showScreen('plan-overview')" id="nav-plan-overview">7. Plan Overview</a>
-  <a href="#" onclick="showScreen('plan-checklist')" id="nav-plan-checklist">8. Checklist</a>
-  <a href="#" onclick="showScreen('plan-forum')" id="nav-plan-forum">9. Forum</a>
-  <a href="#" onclick="showScreen('plan-album')" id="nav-plan-album">10. Album</a>
+  <a href="#" onclick="showScreen('plan-services')" id="nav-plan-services">8. Services</a>
+  <a href="#" onclick="showScreen('plan-checklist')" id="nav-plan-checklist">9. Checklist</a>
+  <a href="#" onclick="showScreen('plan-forum')" id="nav-plan-forum">10. Forum</a>
+  <a href="#" onclick="showScreen('book-venue')" id="nav-book-venue">11. Book Venue</a>
+  <a href="#" onclick="showScreen('book-movie')" id="nav-book-movie">12. Book Movie</a>
+  <a href="#" onclick="showScreen('order-food')" id="nav-order-food">13. Order Food</a>
 </nav>
 
 <div class="phone-frame">
@@ -980,7 +1087,49 @@
         <textarea style="width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 10px; font-size: 16px; min-height: 80px; font-family: inherit;" placeholder="Add a fun description for your invitees..."></textarea>
       </div>
 
-      <button class="btn btn-primary" style="margin-top: 12px;">Create & Invite Friends</button>
+      <div class="section-header" style="margin-top: 24px;">
+        <h2>Add Services</h2>
+        <a href="#">View all</a>
+      </div>
+      <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Book venues, order food, or add extras to your plan</p>
+
+      <div class="service-card">
+        <div class="service-icon venue">📍</div>
+        <div class="service-info">
+          <h4>Book a Venue</h4>
+          <p>Parks, sports courts, party halls</p>
+        </div>
+        <button class="service-action">Add</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon food">🍕</div>
+        <div class="service-info">
+          <h4>Order Food & Drinks</h4>
+          <p>Catering, snacks, beverages</p>
+        </div>
+        <button class="service-action">Add</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon movie">🎬</div>
+        <div class="service-info">
+          <h4>Book Movie Tickets</h4>
+          <p>Group bookings with best seats</p>
+        </div>
+        <button class="service-action">Add</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon equipment">🎮</div>
+        <div class="service-info">
+          <h4>Rent Equipment</h4>
+          <p>Games, sports gear, party supplies</p>
+        </div>
+        <button class="service-action">Add</button>
+      </div>
+
+      <button class="btn btn-primary" style="margin-top: 20px;">Create & Invite Friends</button>
     </div>
   </div>
 
@@ -1066,9 +1215,9 @@
     </div>
     <div class="plan-tabs">
       <div class="plan-tab active">Overview</div>
+      <div class="plan-tab">Services</div>
       <div class="plan-tab">Checklist</div>
       <div class="plan-tab">Forum</div>
-      <div class="plan-tab">Album</div>
     </div>
     <div class="content">
       <div class="card">
@@ -1163,7 +1312,99 @@
     </div>
   </div>
 
-  <!-- Screen 8: Plan Checklist -->
+  <!-- Screen 8: Plan Services -->
+  <div class="screen" id="plan-services">
+    <div class="status-bar">9:41</div>
+    <div class="header header-with-back">
+      <div class="back-btn">←</div>
+      <h1 style="font-size: 20px;">Office Treasure Hunt</h1>
+    </div>
+    <div class="plan-tabs">
+      <div class="plan-tab">Overview</div>
+      <div class="plan-tab active">Services</div>
+      <div class="plan-tab">Checklist</div>
+      <div class="plan-tab">Forum</div>
+    </div>
+    <div class="content">
+      <div class="booking-summary">
+        <h3>Total Bookings</h3>
+        <div class="amount">₹4,500</div>
+        <div class="details">2 confirmed • 1 pending</div>
+      </div>
+
+      <div class="section-header">
+        <h2>Booked Services</h2>
+      </div>
+
+      <div class="service-card selected">
+        <div class="service-icon venue">📍</div>
+        <div class="service-info">
+          <h4>Cubbon Park - Zone A</h4>
+          <p>Mar 15, 3:00 PM - 6:00 PM</p>
+          <span class="service-status confirmed">Confirmed</span>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 14px; font-weight: 600;">₹2,000</div>
+          <div style="font-size: 11px; color: #666;">Paid</div>
+        </div>
+      </div>
+
+      <div class="service-card selected">
+        <div class="service-icon food">🍕</div>
+        <div class="service-info">
+          <h4>Snack Box Catering</h4>
+          <p>15 snack boxes + drinks</p>
+          <span class="service-status confirmed">Confirmed</span>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 14px; font-weight: 600;">₹1,500</div>
+          <div style="font-size: 11px; color: #666;">Paid</div>
+        </div>
+      </div>
+
+      <div class="service-card selected">
+        <div class="service-icon equipment">🎮</div>
+        <div class="service-info">
+          <h4>Party Props & Prizes</h4>
+          <p>Medals, certificates, decorations</p>
+          <span class="service-status pending">Payment pending</span>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 14px; font-weight: 600;">₹1,000</div>
+          <button style="background: #FF9500; color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 10px; margin-top: 4px;">Pay Now</button>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top: 24px;">
+        <h2>Add More Services</h2>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon movie">🎬</div>
+        <div class="service-info">
+          <h4>Book Movie Tickets</h4>
+          <p>Group bookings available</p>
+        </div>
+        <button class="service-action">Browse</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon transport">🚗</div>
+        <div class="service-info">
+          <h4>Book Transport</h4>
+          <p>Cabs, mini-bus for group</p>
+        </div>
+        <button class="service-action">Browse</button>
+      </div>
+
+      <div style="background: #f5f5f5; border-radius: 12px; padding: 16px; margin-top: 20px; text-align: center;">
+        <p style="font-size: 13px; color: #666; margin-bottom: 8px;">Split costs with attendees?</p>
+        <button class="btn btn-outline" style="padding: 10px 20px; width: auto;">Setup Bill Split</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 9: Plan Checklist -->
   <div class="screen" id="plan-checklist">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
@@ -1172,9 +1413,9 @@
     </div>
     <div class="plan-tabs">
       <div class="plan-tab">Overview</div>
+      <div class="plan-tab">Services</div>
       <div class="plan-tab active">Checklist</div>
       <div class="plan-tab">Forum</div>
-      <div class="plan-tab">Album</div>
     </div>
     <div class="content">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
@@ -1255,7 +1496,7 @@
     </div>
   </div>
 
-  <!-- Screen 9: Plan Forum -->
+  <!-- Screen 10: Plan Forum -->
   <div class="screen" id="plan-forum">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
@@ -1264,9 +1505,9 @@
     </div>
     <div class="plan-tabs">
       <div class="plan-tab">Overview</div>
+      <div class="plan-tab">Services</div>
       <div class="plan-tab">Checklist</div>
       <div class="plan-tab active">Forum</div>
-      <div class="plan-tab">Album</div>
     </div>
     <div class="content" style="padding-bottom: 140px;">
       <div class="forum-post">
@@ -1338,43 +1579,272 @@
     </div>
   </div>
 
-  <!-- Screen 10: Plan Album -->
-  <div class="screen" id="plan-album">
+  <!-- Screen 11: Book Venue -->
+  <div class="screen" id="book-venue">
     <div class="status-bar">9:41</div>
     <div class="header header-with-back">
       <div class="back-btn">←</div>
-      <h1 style="font-size: 20px;">Office Treasure Hunt</h1>
-    </div>
-    <div class="plan-tabs">
-      <div class="plan-tab">Overview</div>
-      <div class="plan-tab">Checklist</div>
-      <div class="plan-tab">Forum</div>
-      <div class="plan-tab active">Album</div>
+      <h1 style="font-size: 20px;">Book a Venue</h1>
     </div>
     <div class="content">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-        <span style="font-size: 14px; color: #666;">12 photos • 2 videos</span>
-        <button style="background: #007AFF; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-size: 13px;">+ Add</button>
+      <input type="text" placeholder="Search venues near Cubbon Park..." style="width: 100%; padding: 14px 16px; border: 1px solid #eee; border-radius: 10px; margin-bottom: 16px;">
+
+      <div style="display: flex; gap: 8px; margin-bottom: 16px; overflow-x: auto;">
+        <span class="tag" style="background: #007AFF; color: white;">All</span>
+        <span class="tag">Parks</span>
+        <span class="tag">Sports</span>
+        <span class="tag">Party Halls</span>
+        <span class="tag">Cafes</span>
       </div>
 
-      <div class="album-grid">
-        <div class="album-item"></div>
-        <div class="album-item"></div>
-        <div class="album-item"></div>
-        <div class="album-item"></div>
-        <div class="album-item"></div>
-        <div class="album-item"></div>
-        <div class="album-item"></div>
-        <div class="album-item"></div>
-        <div class="album-item"></div>
-        <div class="album-item"></div>
-        <div class="album-item"></div>
-        <div class="album-item" style="display: flex; align-items: center; justify-content: center; font-size: 10px; color: #666;">▶️ Video</div>
+      <div class="card">
+        <div class="card-image" style="height: 140px;">Cubbon Park Zone A</div>
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <div>
+            <h3>Cubbon Park - Zone A</h3>
+            <p>Open lawn area • 50+ capacity</p>
+            <div style="display: flex; gap: 4px; margin-top: 6px;">
+              <span style="color: #FFB800;">★★★★</span>
+              <span style="font-size: 12px; color: #666;">4.5 (120)</span>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 18px; font-weight: 700;">₹2,000</div>
+            <div style="font-size: 11px; color: #666;">for 3 hrs</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="margin-top: 12px; padding: 12px;">Select & Book</button>
       </div>
 
-      <p style="text-align: center; margin-top: 24px; font-size: 13px; color: #666;">
-        All attendees can add photos and videos
-      </p>
+      <div class="card">
+        <div class="card-image" style="height: 140px;">Smash Arena</div>
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <div>
+            <h3>Smash Pickleball Arena</h3>
+            <p>4 courts • Equipment included</p>
+            <div style="display: flex; gap: 4px; margin-top: 6px;">
+              <span style="color: #FFB800;">★★★★★</span>
+              <span style="font-size: 12px; color: #666;">4.8 (85)</span>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 18px; font-weight: 700;">₹3,500</div>
+            <div style="font-size: 11px; color: #666;">for 2 hrs</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="margin-top: 12px; padding: 12px;">Select & Book</button>
+      </div>
+
+      <div class="card">
+        <div class="card-image" style="height: 140px;">The Party Place</div>
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <div>
+            <h3>The Party Place</h3>
+            <p>Indoor venue • AC • 30 capacity</p>
+            <div style="display: flex; gap: 4px; margin-top: 6px;">
+              <span style="color: #FFB800;">★★★★</span>
+              <span style="font-size: 12px; color: #666;">4.2 (64)</span>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 18px; font-weight: 700;">₹5,000</div>
+            <div style="font-size: 11px; color: #666;">for 4 hrs</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="margin-top: 12px; padding: 12px;">Select & Book</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 12: Book Movie -->
+  <div class="screen" id="book-movie">
+    <div class="status-bar">9:41</div>
+    <div class="header header-with-back">
+      <div class="back-btn">←</div>
+      <h1 style="font-size: 20px;">Book Movie Tickets</h1>
+    </div>
+    <div class="content">
+      <div class="section-header">
+        <h2>Now Showing</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-row">
+          <div class="card-image small" style="width: 90px; height: 130px;">Movie Poster</div>
+          <div style="flex: 1;">
+            <h3>Pushpa 3: The Rampage</h3>
+            <p>Action, Drama • 2h 45m</p>
+            <div style="display: flex; gap: 4px; margin-top: 6px;">
+              <span style="color: #FFB800;">★★★★</span>
+              <span style="font-size: 12px; color: #666;">4.6</span>
+            </div>
+            <div style="margin-top: 8px;">
+              <span class="tag">Telugu</span>
+              <span class="tag">Hindi</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="margin-top: 12px; padding: 12px;">Select Showtime</button>
+      </div>
+
+      <div class="card">
+        <div class="card-row">
+          <div class="card-image small" style="width: 90px; height: 130px;">Movie Poster</div>
+          <div style="flex: 1;">
+            <h3>Avengers: Secret Wars</h3>
+            <p>Action, Sci-Fi • 3h 10m</p>
+            <div style="display: flex; gap: 4px; margin-top: 6px;">
+              <span style="color: #FFB800;">★★★★★</span>
+              <span style="font-size: 12px; color: #666;">4.9</span>
+            </div>
+            <div style="margin-top: 8px;">
+              <span class="tag">English</span>
+              <span class="tag">IMAX</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="margin-top: 12px; padding: 12px;">Select Showtime</button>
+      </div>
+
+      <div class="section-header" style="margin-top: 20px;">
+        <h2>Select Theatre & Time</h2>
+      </div>
+
+      <div class="card" style="border: 2px solid #007AFF;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div>
+            <h4 style="font-size: 14px;">PVR Orion Mall</h4>
+            <p style="font-size: 12px; color: #666;">2.3 km away</p>
+          </div>
+          <span style="font-size: 12px; color: #34C759;">12 seats available</span>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span style="padding: 8px 14px; background: #007AFF; color: white; border-radius: 6px; font-size: 13px;">3:30 PM</span>
+          <span style="padding: 8px 14px; background: #eee; border-radius: 6px; font-size: 13px;">6:45 PM</span>
+          <span style="padding: 8px 14px; background: #eee; border-radius: 6px; font-size: 13px;">9:30 PM</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div>
+            <h4 style="font-size: 14px;">INOX Garuda Mall</h4>
+            <p style="font-size: 12px; color: #666;">4.1 km away</p>
+          </div>
+          <span style="font-size: 12px; color: #FF9500;">8 seats available</span>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span style="padding: 8px 14px; background: #eee; border-radius: 6px; font-size: 13px;">2:00 PM</span>
+          <span style="padding: 8px 14px; background: #eee; border-radius: 6px; font-size: 13px;">5:15 PM</span>
+          <span style="padding: 8px 14px; background: #eee; border-radius: 6px; font-size: 13px;">8:30 PM</span>
+        </div>
+      </div>
+
+      <div style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 375px; padding: 16px 20px; background: white; border-top: 1px solid #eee;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span style="font-size: 14px; color: #666;">7 tickets × ₹350</span>
+          <span style="font-size: 18px; font-weight: 700;">₹2,450</span>
+        </div>
+        <button class="btn btn-primary">Book 7 Tickets</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 13: Order Food -->
+  <div class="screen" id="order-food">
+    <div class="status-bar">9:41</div>
+    <div class="header header-with-back">
+      <div class="back-btn">←</div>
+      <h1 style="font-size: 20px;">Order Food & Drinks</h1>
+    </div>
+    <div class="content" style="padding-bottom: 160px;">
+      <div style="display: flex; gap: 8px; margin-bottom: 16px; overflow-x: auto;">
+        <span class="tag" style="background: #007AFF; color: white;">All</span>
+        <span class="tag">Catering</span>
+        <span class="tag">Snacks</span>
+        <span class="tag">Beverages</span>
+        <span class="tag">Desserts</span>
+      </div>
+
+      <div class="section-header">
+        <h2>Recommended for 15 people</h2>
+      </div>
+
+      <div class="card">
+        <div class="card-row">
+          <div class="card-image small">Snack Box</div>
+          <div style="flex: 1;">
+            <h3>Party Snack Box</h3>
+            <p>Samosa, sandwich, chips, juice</p>
+            <div style="font-size: 14px; font-weight: 600; margin-top: 4px;">₹150 / person</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button style="width: 28px; height: 28px; border: 1px solid #ddd; border-radius: 6px; background: white;">-</button>
+            <span style="font-weight: 600;">15</span>
+            <button style="width: 28px; height: 28px; border: none; border-radius: 6px; background: #007AFF; color: white;">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-row">
+          <div class="card-image small">Pizza</div>
+          <div style="flex: 1;">
+            <h3>Pizza Party Pack</h3>
+            <p>4 large pizzas (serves 16)</p>
+            <div style="font-size: 14px; font-weight: 600; margin-top: 4px;">₹2,400</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button style="width: 28px; height: 28px; border: 1px solid #ddd; border-radius: 6px; background: white;">-</button>
+            <span style="font-weight: 600;">0</span>
+            <button style="width: 28px; height: 28px; border: none; border-radius: 6px; background: #007AFF; color: white;">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-row">
+          <div class="card-image small">Drinks</div>
+          <div style="flex: 1;">
+            <h3>Beverage Combo</h3>
+            <p>Soft drinks + water bottles</p>
+            <div style="font-size: 14px; font-weight: 600; margin-top: 4px;">₹80 / person</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button style="width: 28px; height: 28px; border: 1px solid #ddd; border-radius: 6px; background: white;">-</button>
+            <span style="font-weight: 600;">15</span>
+            <button style="width: 28px; height: 28px; border: none; border-radius: 6px; background: #007AFF; color: white;">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-row">
+          <div class="card-image small">Cake</div>
+          <div style="flex: 1;">
+            <h3>Celebration Cake</h3>
+            <p>1 kg chocolate truffle</p>
+            <div style="font-size: 14px; font-weight: 600; margin-top: 4px;">₹850</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button style="width: 28px; height: 28px; border: 1px solid #ddd; border-radius: 6px; background: white;">-</button>
+            <span style="font-weight: 600;">1</span>
+            <button style="width: 28px; height: 28px; border: none; border-radius: 6px; background: #007AFF; color: white;">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 375px; padding: 16px 20px; background: white; border-top: 1px solid #eee;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 13px; color: #666;">Delivery to: Cubbon Park</span>
+          <a href="#" style="font-size: 13px; color: #007AFF; text-decoration: none;">Change</a>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span style="font-size: 14px; color: #666;">4 items</span>
+          <span style="font-size: 18px; font-weight: 700;">₹4,700</span>
+        </div>
+        <button class="btn btn-primary">Add to Plan</button>
+      </div>
     </div>
   </div>
 
@@ -1399,12 +1869,15 @@
       'home': 'Home (Dashboard)',
       'marketplace': 'Template Marketplace',
       'template-detail': 'Template Detail',
-      'create-plan': 'Create Plan',
+      'create-plan': 'Create Plan + Services',
       'invite': 'Invite Friends',
       'plan-overview': 'Plan - Overview',
+      'plan-services': 'Plan - Services & Bookings',
       'plan-checklist': 'Plan - Checklist',
       'plan-forum': 'Plan - Forum',
-      'plan-album': 'Plan - Album'
+      'book-venue': 'Book a Venue',
+      'book-movie': 'Book Movie Tickets',
+      'order-food': 'Order Food & Drinks'
     };
     document.getElementById('screen-label').textContent = 'Screen: ' + labels[screenId];
   }
