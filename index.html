@@ -762,6 +762,9 @@
   <a href="#" onclick="showScreen('book-venue')" id="nav-book-venue">10. Book Venue</a>
   <a href="#" onclick="showScreen('book-movie')" id="nav-book-movie">11. Book Movie</a>
   <a href="#" onclick="showScreen('order-food')" id="nav-order-food">12. Order Food</a>
+  <a href="#" onclick="showScreen('split-bill')" id="nav-split-bill">13. Split Bill</a>
+  <a href="#" onclick="showScreen('split-bill-custom')" id="nav-split-bill-custom">14. Custom Split</a>
+  <a href="#" onclick="showScreen('pay-share')" id="nav-pay-share">15. Pay (Attendee)</a>
 </nav>
 
 <div class="phone-frame">
@@ -1786,6 +1789,299 @@
     </div>
   </div>
 
+  <!-- Screen 13: Split Bill -->
+  <div class="screen" id="split-bill">
+    <div class="status-bar">9:41</div>
+    <div class="header header-with-back">
+      <div class="back-btn">←</div>
+      <h1 style="font-size: 20px;">Split Bill</h1>
+    </div>
+    <div class="content">
+      <!-- Total Summary -->
+      <div class="booking-summary">
+        <h3>Total to Split</h3>
+        <div class="amount">₹4,500</div>
+        <div class="details">3 services • 7 attendees</div>
+      </div>
+
+      <!-- Split Type Toggle -->
+      <div class="section-header">
+        <h2>Split Type</h2>
+      </div>
+      <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+        <button style="flex: 1; padding: 14px; background: #007AFF; color: white; border: none; border-radius: 10px; font-weight: 600;">Equal Split</button>
+        <button style="flex: 1; padding: 14px; background: #eee; color: #333; border: none; border-radius: 10px; font-weight: 600;">Custom Split</button>
+      </div>
+
+      <!-- Equal Split View -->
+      <div class="card" style="background: #f0f7ff; border: 1px solid #007AFF;">
+        <div style="text-align: center;">
+          <div style="font-size: 13px; color: #666;">Each person pays</div>
+          <div style="font-size: 32px; font-weight: 700; color: #007AFF;">₹643</div>
+          <div style="font-size: 12px; color: #666;">₹4,500 ÷ 7 people</div>
+        </div>
+      </div>
+
+      <!-- Your Payment Info -->
+      <div class="section-header" style="margin-top: 24px;">
+        <h2>Your UPI Details</h2>
+      </div>
+      <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Add your UPI ID so attendees can pay you directly</p>
+
+      <div class="input-group">
+        <label>UPI ID</label>
+        <input type="text" placeholder="yourname@upi" value="rahul@okicici" style="background: white;">
+      </div>
+
+      <div class="input-group">
+        <label>Account Holder Name</label>
+        <input type="text" placeholder="Your name" value="Rahul Sharma" style="background: white;">
+      </div>
+
+      <!-- Attendee Split List -->
+      <div class="section-header" style="margin-top: 24px;">
+        <h2>Split Breakdown</h2>
+      </div>
+
+      <div class="card" style="padding: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="avatar"></div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">You (Host)</div>
+            <div style="font-size: 12px; color: #34C759;">Paid ₹4,500</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 14px; font-weight: 600;">₹643</div>
+            <span class="service-status confirmed">Your share</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="avatar"></div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Amit Kumar</div>
+            <div style="font-size: 12px; color: #666;">+91 98765 43212</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 14px; font-weight: 600;">₹643</div>
+            <span class="service-status pending">Pending</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="avatar"></div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Sneha Patel</div>
+            <div style="font-size: 12px; color: #666;">+91 98765 43213</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 14px; font-weight: 600;">₹643</div>
+            <span class="service-status confirmed">Paid</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="avatar"></div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Priya Sharma</div>
+            <div style="font-size: 12px; color: #666;">+91 98765 43211</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 14px; font-weight: 600;">₹643</div>
+            <span class="service-status pending">Pending</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align: center; font-size: 12px; color: #666; margin: 16px 0;">
+        + 3 more attendees
+      </p>
+
+      <!-- Collection Status -->
+      <div style="background: #fff3e0; border-radius: 12px; padding: 16px; margin-top: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 13px; color: #666;">Collected</div>
+            <div style="font-size: 20px; font-weight: 700; color: #f57c00;">₹1,286 <span style="font-size: 14px; font-weight: 400;">/ ₹3,857</span></div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 24px; font-weight: 700; color: #f57c00;">2/6</div>
+            <div style="font-size: 11px; color: #666;">paid</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" style="margin-top: 20px;">Send Payment Requests</button>
+      <p style="text-align: center; font-size: 12px; color: #666; margin-top: 8px;">
+        Attendees will receive WhatsApp message with your UPI details
+      </p>
+    </div>
+  </div>
+
+  <!-- Screen 14: Split Bill - Custom -->
+  <div class="screen" id="split-bill-custom">
+    <div class="status-bar">9:41</div>
+    <div class="header header-with-back">
+      <div class="back-btn">←</div>
+      <h1 style="font-size: 20px;">Custom Split</h1>
+    </div>
+    <div class="content">
+      <div class="booking-summary" style="background: linear-gradient(135deg, #f57c00 0%, #ff9800 100%);">
+        <h3>Total to Split</h3>
+        <div class="amount">₹4,500</div>
+        <div class="details">Remaining to assign: ₹0</div>
+      </div>
+
+      <div class="section-header">
+        <h2>Assign Amounts</h2>
+      </div>
+      <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Drag slider or enter custom amount for each person</p>
+
+      <div class="card" style="padding: 14px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <div class="avatar"></div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">You (Host)</div>
+          </div>
+          <input type="text" value="₹1,000" style="width: 80px; padding: 8px; border: 1px solid #ddd; border-radius: 8px; text-align: center; font-weight: 600;">
+        </div>
+        <input type="range" style="width: 100%;" value="22">
+      </div>
+
+      <div class="card" style="padding: 14px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <div class="avatar"></div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Amit Kumar</div>
+          </div>
+          <input type="text" value="₹500" style="width: 80px; padding: 8px; border: 1px solid #ddd; border-radius: 8px; text-align: center; font-weight: 600;">
+        </div>
+        <input type="range" style="width: 100%;" value="11">
+      </div>
+
+      <div class="card" style="padding: 14px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <div class="avatar"></div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Sneha Patel</div>
+          </div>
+          <input type="text" value="₹800" style="width: 80px; padding: 8px; border: 1px solid #ddd; border-radius: 8px; text-align: center; font-weight: 600;">
+        </div>
+        <input type="range" style="width: 100%;" value="18">
+      </div>
+
+      <div class="card" style="padding: 14px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <div class="avatar"></div>
+          <div style="flex: 1;">
+            <div style="font-weight: 600; font-size: 14px;">Priya Sharma</div>
+            <div style="font-size: 11px; color: #666;">Exclude from split</div>
+          </div>
+          <input type="text" value="₹0" style="width: 80px; padding: 8px; border: 1px solid #ddd; border-radius: 8px; text-align: center; font-weight: 600; color: #999;">
+        </div>
+        <input type="range" style="width: 100%;" value="0">
+      </div>
+
+      <p style="text-align: center; font-size: 12px; color: #666; margin: 16px 0;">
+        + 3 more attendees
+      </p>
+
+      <button class="btn btn-primary" style="margin-top: 12px;">Save & Send Requests</button>
+    </div>
+  </div>
+
+  <!-- Screen 15: Pay Share (Attendee View) -->
+  <div class="screen" id="pay-share">
+    <div class="status-bar">9:41</div>
+    <div class="header header-with-back">
+      <div class="back-btn">←</div>
+      <h1 style="font-size: 20px;">Pay Your Share</h1>
+    </div>
+    <div class="content">
+      <!-- Plan Card -->
+      <div class="invite-card">
+        <h2>Office Treasure Hunt</h2>
+        <p>Sat, Mar 15 • 3:00 PM • Cubbon Park</p>
+      </div>
+
+      <!-- Amount Card -->
+      <div class="card" style="text-align: center; padding: 24px;">
+        <div style="font-size: 14px; color: #666; margin-bottom: 4px;">Your Share</div>
+        <div style="font-size: 40px; font-weight: 700; color: #007AFF;">₹643</div>
+        <div style="font-size: 13px; color: #666; margin-top: 8px;">Equal split of ₹4,500 among 7 people</div>
+      </div>
+
+      <!-- What you're paying for -->
+      <div class="section-header">
+        <h2>What's Included</h2>
+      </div>
+      <div class="card" style="padding: 12px;">
+        <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee;">
+          <span style="font-size: 13px;">📍 Venue (Cubbon Park)</span>
+          <span style="font-size: 13px; color: #666;">₹286</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee;">
+          <span style="font-size: 13px;">🍕 Snacks & Drinks</span>
+          <span style="font-size: 13px; color: #666;">₹214</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+          <span style="font-size: 13px;">🎮 Props & Prizes</span>
+          <span style="font-size: 13px; color: #666;">₹143</span>
+        </div>
+      </div>
+
+      <!-- Pay To Section -->
+      <div class="section-header" style="margin-top: 24px;">
+        <h2>Pay To</h2>
+      </div>
+      <div class="card">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <div class="avatar"></div>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Rahul Sharma</div>
+            <div style="font-size: 12px; color: #666;">Plan Host</div>
+          </div>
+        </div>
+
+        <!-- UPI ID Display -->
+        <div style="background: #f5f5f5; border-radius: 10px; padding: 14px; margin-bottom: 12px;">
+          <div style="font-size: 12px; color: #666; margin-bottom: 4px;">UPI ID</div>
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 16px; font-weight: 600;">rahul@okicici</span>
+            <button style="background: #007AFF; color: white; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px;">Copy</button>
+          </div>
+        </div>
+
+        <!-- QR Code Placeholder -->
+        <div style="background: white; border: 2px dashed #ddd; border-radius: 12px; padding: 20px; text-align: center;">
+          <div style="width: 120px; height: 120px; background: #f0f0f0; margin: 0 auto 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #999;">QR Code</div>
+          <p style="font-size: 12px; color: #666;">Scan to pay via any UPI app</p>
+        </div>
+      </div>
+
+      <!-- Payment Options -->
+      <div class="section-header" style="margin-top: 24px;">
+        <h2>Quick Pay</h2>
+      </div>
+      <div style="display: flex; gap: 12px;">
+        <button style="flex: 1; padding: 14px; background: #5f259f; color: white; border: none; border-radius: 10px; font-weight: 600;">PhonePe</button>
+        <button style="flex: 1; padding: 14px; background: #00baf2; color: white; border: none; border-radius: 10px; font-weight: 600;">Paytm</button>
+        <button style="flex: 1; padding: 14px; background: #ff9500; color: white; border: none; border-radius: 10px; font-weight: 600;">GPay</button>
+      </div>
+
+      <button class="btn btn-primary" style="margin-top: 20px;">I've Paid - Notify Host</button>
+      <p style="text-align: center; font-size: 12px; color: #666; margin-top: 8px;">
+        Host will confirm once payment is received
+      </p>
+    </div>
+  </div>
+
 </div>
 
 <div class="screen-label" id="screen-label">Screen: Home</div>
@@ -1814,7 +2110,10 @@
       'plan-album': 'Plan - Album',
       'book-venue': 'Book a Venue',
       'book-movie': 'Book Movie Tickets',
-      'order-food': 'Order Food & Drinks'
+      'order-food': 'Order Food & Drinks',
+      'split-bill': 'Split Bill (Equal) - Host View',
+      'split-bill-custom': 'Split Bill (Custom) - Host View',
+      'pay-share': 'Pay Your Share - Attendee View'
     };
     document.getElementById('screen-label').textContent = 'Screen: ' + labels[screenId];
   }
